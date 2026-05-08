@@ -281,3 +281,7 @@ def sk_header(seccion: str = "", cliente_nombre: str = "") -> str:
       </div>
     </div>
     """
+
+
+# Abre config/brand.py y agrega esta línea al final de las definiciones de colores:
+YELLOW_WARN = "#FFF8E1"
