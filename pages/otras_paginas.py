@@ -76,7 +76,7 @@ def render_portafolio():
             escenario = st.session_state.get("escenario_demo","libre")
             if escenario == "C":
                 log_accion("Intento cambio perfil → ERR011 (escenario C)")
-                activar_error("ERR011","Mi Portafolio")
+                if not st.session_state.get("error_disparado_portafolio",False): activar_error("ERR011","Mi Portafolio")
                 st.rerun()
             else:
                 st.success("✅ Cuestionario de perfil abierto. Completa las preguntas.")
