@@ -262,7 +262,8 @@ def _paso_otp():
     if ver:
         if codigo=="123456":
             m = st.session_state.get("retiro_monto",0)
-            n = st.session_state.get("cliente_activo",{}).get("nombre","").split()[0]
+            _cli_otp = st.session_state.get("cliente_activo") or {}
+            n = (_cli_otp.get("nombre","Cliente") or "Cliente").split()[0]
             st.session_state.retiro_paso=1
             st.success(f"🎉 ¡Listo, {n}! Retiro de ${m:,.2f} procesado. Disponible el 08/05/2026.")
             st.balloons()

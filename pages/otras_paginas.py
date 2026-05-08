@@ -72,7 +72,7 @@ def render_portafolio():
 
 
 def render_documentos():
-    st.markdown(sk_header("Documentos", st.session_state.get("cliente_activo",{}).get("nombre","")), unsafe_allow_html=True)
+    st.markdown(sk_header("Documentos", (st.session_state.get("cliente_activo") or {}).get("nombre","")), unsafe_allow_html=True)
 
     if st.session_state.get("chatbot_activo"):
         render_chatbot_flotante()
